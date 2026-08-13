@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>รสชาติไทย | Thai Fusion Burgers</title>
+<meta name="description" content="รสชาติไทย Thai Fusion Burgers — เบอร์เกอร์ฟิวชั่นไทย กลิ่นอายไทยแท้ ส่งทั่วกรุงเทพฯ">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700;800&display=swap');
+:root{--gold:#e9a92f;--gold2:#ffd36a;--cream:#fff4d5;--red:#b51f19;--dark:#090705;--dark2:#17100b;--line:#3a2817}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Prompt','Kanit',sans-serif;background:var(--dark);color:#fff;line-height:1.65}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(8,5,3,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(233,169,47,.25)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.5px}
+.brand-mark{width:48px;height:48px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:22px}
+.brand small{display:block;color:var(--gold2);font-size:11px;font-weight:500;letter-spacing:1px}
+.menu{display:flex;gap:25px;font-size:14px;font-weight:600}
+.menu a{opacity:.9}.menu a:hover{color:var(--gold)}
+.hero{min-height:100vh;padding:120px 0 60px;display:grid;align-items:end;background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.55) 48%,rgba(0,0,0,.15) 100%),url('images/burger-5.jpg') center/cover}
+.hero-inner{max-width:720px;padding-bottom:30px}
+.kicker{color:var(--gold2);font-weight:700;letter-spacing:2px;font-size:15px;margin-bottom:8px}
+h1{font-size:clamp(48px,8vw,92px);line-height:.98;color:var(--gold2);text-shadow:4px 5px 0 #2a1707;margin-bottom:15px}
+.hero h2{font-size:clamp(20px,3vw,34px);margin-bottom:15px}
+.hero p{font-size:18px;color:#f3e7d0;max-width:650px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 23px;border-radius:9px;font-weight:700;border:1px solid var(--gold);transition:.25s}
+.btn.gold{background:var(--gold);color:#120b04}.btn.dark{background:rgba(0,0,0,.55);color:#fff}.btn:hover{transform:translateY(-3px)}
+section{padding:90px 0}
+.section-head{text-align:center;margin-bottom:45px}.eyebrow{color:var(--gold);font-size:14px;font-weight:700;letter-spacing:2px}.section-head h2{font-size:clamp(32px,5vw,55px);color:var(--gold2);line-height:1.1;margin:7px 0 10px}.section-head p{color:#cbbda6}
+.about{background:linear-gradient(180deg,#120b07,#080604)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.about-card{background:linear-gradient(145deg,#24170e,#0f0905);border:1px solid #4b3219;border-radius:20px;padding:30px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.about-card h3{font-size:28px;color:var(--cream);margin-bottom:15px}.about-card p{color:#d2c5ae}
+.badges{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.badge{border:1px solid #4c351d;border-radius:12px;padding:15px;text-align:center;background:#160e08}.badge strong{display:block;color:var(--gold);font-size:20px}.badge span{font-size:12px;color:#c8bba7}
+.menu-section{background:#0b0806}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.item{background:linear-gradient(145deg,#1d120b,#0d0906);border:1px solid #3d2817;border-radius:18px;overflow:hidden;transition:.25s}.item:hover{transform:translateY(-6px);border-color:#8b5b20}
+.item img{width:100%;aspect-ratio:1.35;object-fit:cover;display:block}.item-body{padding:18px}.item h3{font-size:19px;color:#fff}.item .en{font-size:11px;color:#a99a82;text-transform:uppercase}.desc{font-size:13px;color:#bcae98;margin:7px 0 10px;min-height:42px}.price{color:var(--gold2);font-size:23px;font-weight:800}
+.category{margin:50px 0 18px;display:flex;align-items:center;gap:15px}.category:first-of-type{margin-top:0}.category h3{font-size:26px;color:var(--gold2)}.category:after{content:"";height:1px;background:#4a3018;flex:1}
+.simple-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.simple-item{padding:18px;border:1px solid #3d2817;border-radius:14px;background:#160e08}.simple-item h4{font-size:15px}.simple-item span{color:var(--gold);font-weight:800;font-size:18px}
+.combo{background:linear-gradient(135deg,#1a1009,#0a0705);border-top:1px solid #4d3319;border-bottom:1px solid #4d3319}
+.combo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.combo-card{padding:22px;border:1px solid #67441d;border-radius:16px}.combo-card .set{color:var(--gold);font-weight:800;font-size:18px}.combo-card strong{font-size:30px;color:#fff}.combo-card p{color:#c8b99e;font-size:13px}
+.promo{background:linear-gradient(90deg,#210d08,#090604);position:relative;overflow:hidden}.promo:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 50%,rgba(233,169,47,.18),transparent 35%)}.promo-inner{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}.promo h2{font-size:clamp(34px,5vw,62px);color:var(--gold2);line-height:1.05}.promo p{font-size:19px;color:#e8dbc5;margin:15px 0}.promo-box{padding:28px;border:2px solid var(--gold);border-radius:20px;background:rgba(0,0,0,.45);text-align:center}.promo-box strong{font-size:46px;color:#fff}.promo-box span{display:block;color:var(--gold)}
+.gallery{background:#0b0806}.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.gallery img{width:100%;border-radius:16px;border:1px solid #3e2a18;display:block}.gallery img:first-child{grid-column:span 2}
+.contact{background:linear-gradient(180deg,#0c0805,#050403)}.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.contact-card{border:1px solid #3e2a18;border-radius:18px;padding:25px;text-align:center;background:#120b07}.contact-card .ico{font-size:30px}.contact-card h3{margin:8px 0;color:var(--cream)}.contact-card p{color:#bcae98;font-size:14px;margin-bottom:15px}.contact-card a{color:var(--gold2);font-weight:700}
+footer{padding:30px 0;border-top:1px solid #302014;background:#050403;text-align:center;color:#8f826f;font-size:13px}.footer-brand{color:var(--gold);font-size:20px;font-weight:800;margin-bottom:5px}
+@media(max-width:850px){.menu{display:none}.about-grid,.promo-inner{grid-template-columns:1fr}.menu-grid{grid-template-columns:1fr 1fr}.simple-grid{grid-template-columns:1fr 1fr}.combo-grid,.contact-grid{grid-template-columns:1fr}.hero{min-height:88vh}.gallery-grid{grid-template-columns:1fr}.gallery img:first-child{grid-column:auto}}
+@media(max-width:560px){section{padding:65px 0}.menu-grid{grid-template-columns:1fr}.badges{grid-template-columns:1fr}.hero{padding-top:100px}.hero p{font-size:16px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <div class="brand-mark">รส</div>
+      <div>รสชาติไทย<small>THAI FUSION BURGERS</small></div>
+    </a>
+    <div class="menu">
+      <a href="#about">เกี่ยวกับร้าน</a>
+      <a href="#menu">เมนู</a>
+      <a href="#promo">โปรโมชั่น</a>
+      <a href="#gallery">แกลเลอรี</a>
+      <a href="#contact">สั่งซื้อ</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="kicker">THAI FUSION BURGERS</div>
+      <h1>รสชาติไทย</h1>
+      <h2>เบอร์เกอร์ฟิวชั่นไทย ไม่เหมือนใคร</h2>
+      <p>อร่อยลงตัว กลิ่นอายไทยแท้ในทุกคำ — ยกเมนูรสจัดจ้านแบบไทยมาอยู่ในเบอร์เกอร์ พร้อมเสิร์ฟความอร่อยถึงคุณ</p>
+      <div class="cta">
+        <a class="btn gold" href="#menu">ดูเมนูทั้งหมด</a>
+        <a class="btn dark" href="tel:0987654321">โทรสั่ง 098-765-4321</a>
+        <a class="btn dark" target="_blank" href="https://www.facebook.com/profile.php?id=61590901304791">Facebook ร้าน</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">OUR STORY</div>
+      <h2>เบอร์เกอร์สไตล์ไทย</h2>
+      <p>คุ้นเคยกับรสชาติไทย แต่สนุกกับรูปแบบใหม่</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>ความอร่อยที่มีกลิ่นอายไทย</h3>
+        <p>รสชาติไทยนำมาผสานกับเบอร์เกอร์อย่างสร้างสรรค์ ตั้งแต่ลาบคั่ว น้ำพริกหนุ่ม แคบหมู หมูกรอบคั่วพริกเกลือ ไปจนถึงซอสสูตรพิเศษ เพื่อให้ทุกคำมีเอกลักษณ์และความจัดจ้านแบบไทย</p>
+        <div class="badges">
+          <div class="badge"><strong>สดใหม่</strong><span>วัตถุดิบคุณภาพ</span></div>
+          <div class="badge"><strong>สูตรเฉพาะ</strong><span>กลิ่นอายไทย</span></div>
+          <div class="badge"><strong>Delivery</strong><span>ส่งทั่วกรุงเทพฯ</span></div>
+        </div>
+      </div>
+      <img src="images/burger-5.jpg" alt="รสชาติไทย Thai Fusion Burgers" style="width:100%;border-radius:20px;border:1px solid #4b3219">
+    </div>
+  </div>
+</section>
+
+<section class="menu-section" id="menu">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">MENU</div>
+      <h2>เมนูเบอร์เกอร์</h2>
+      <p>เลือกความอร่อยในสไตล์ไทยที่ไม่เหมือนใคร</p>
+    </div>
+
+    <div class="menu-grid">
+      <article class="item"><img src="images/burger-3.jpg" alt="เบอร์เกอร์เนื้อซอสลาบคั่ว"><div class="item-body"><h3>เบอร์เกอร์เนื้อซอสลาบคั่ว</h3><div class="en">LARB KUA BEEF BURGER</div><div class="desc">เนื้อวัวราดซอสลาบคั่วหอม ๆ พร้อมความเข้มข้นแบบไทย</div><div class="price">159.-</div></div></article>
+      <article class="item"><img src="images/burger-2.jpg" alt="เบอร์เกอร์ไก่ทอดซอสศรีราชาใบมะกรูด"><div class="item-body"><h3>เบอร์เกอร์ไก่ทอดซอสศรีราชาใบมะกรูด</h3><div class="en">SRIRACHA KAFFIR LIME CHICKEN BURGER</div><div class="desc">ไก่ทอดกรอบ ซอสศรีราชาใบมะกรูด เผ็ดหอมกำลังดี</div><div class="price">139.-</div></div></article>
+      <article class="item"><img src="images/burger-5.jpg" alt="เบอร์เกอร์น้ำพริกหนุ่มแคบหมู"><div class="item-body"><h3>เบอร์เกอร์น้ำพริกหนุ่ม-แคบหมู</h3><div class="en">NAM PRIK NOOM BEEF BURGER</div><div class="desc">เนื้อฉ่ำ ๆ น้ำพริกหนุ่มหอม ๆ พร้อมแคบหมูกรอบ</div><div class="price">159.-</div></div></article>
+      <article class="item"><img src="images/burger-4.jpg" alt="เบอร์เกอร์หมูกรอบคั่วพริกเกลือ"><div class="item-body"><h3>เบอร์เกอร์หมูกรอบคั่วพริกเกลือ</h3><div class="en">CRISPY PORK BELLY BURGER</div><div class="desc">หมูกรอบคั่วพริกเกลือ รสจัดจ้าน หอมพริกกระเทียม</div><div class="price">139.-</div></div></article>
+      <article class="item"><img src="images/burger-4.jpg" alt="เบอร์เกอร์ลาบปลาทอดกรอบ"><div class="item-body"><h3>เบอร์เกอร์ลาบปลาทอดกรอบ</h3><div class="en">CRISPY FISH LARB BURGER</div><div class="desc">ปลาทอดกรอบคลุกลาบสมุนไพร หอมข้าวคั่ว</div><div class="price">139.-</div></div></article>
+      <article class="item"><img src="images/burger-3.jpg" alt="เบอร์เกอร์เห็ดออรินจิอูมามิ"><div class="item-body"><h3>เบอร์เกอร์เห็ดออรินจิอูมามิ</h3><div class="en">MUSHROOM UMAMI BURGER</div><div class="desc">เห็ดออรินจิหอมซอสอูมามิ ทางเลือกสำหรับสายผัก</div><div class="price">129.-</div></div></article>
+    </div>
+
+    <div class="category"><h3>SIDES</h3></div>
+    <div class="simple-grid">
+      <div class="simple-item"><h4>เฟรนช์ฟรายส์</h4><span>59.-</span></div>
+      <div class="simple-item"><h4>นักเก็ตไก่</h4><span>69.-</span></div>
+      <div class="simple-item"><h4>แคบหมู</h4><span>39.-</span></div>
+      <div class="simple-item"><h4>ซอสสูตรพิเศษ</h4><span>20.-</span></div>
+    </div>
+
+    <div class="category"><h3>DRINKS</h3></div>
+    <div class="simple-grid">
+      <div class="simple-item"><h4>ชาเย็นไทย</h4><span>59.-</span></div>
+      <div class="simple-item"><h4>น้ำมะนาวโซดา</h4><span>49.-</span></div>
+      <div class="simple-item"><h4>น้ำลำไย</h4><span>49.-</span></div>
+      <div class="simple-item"><h4>น้ำดื่ม</h4><span>20.-</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="combo">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">COMBO SET</div>
+      <h2>ชุดสุดคุ้ม เริ่มต้น 199.-</h2>
+      <p>เบอร์เกอร์ + เครื่องดื่ม + ของทานเล่น ตามชุดที่เลือก</p>
+    </div>
+    <div class="combo-grid">
+      <div class="combo-card"><div class="set">SET A</div><strong>199.-</strong><p>เบอร์เกอร์ + เฟรนช์ฟรายส์ + เครื่องดื่ม</p></div>
+      <div class="combo-card"><div class="set">SET B • BEST SELLER</div><strong>—</strong><p>เบอร์เกอร์ + นักเก็ตไก่ + เครื่องดื่ม</p></div>
+      <div class="combo-card"><div class="set">SET C</div><strong>—</strong><p>เบอร์เกอร์ + เฟรนช์ฟรายส์ + นักเก็ตไก่ + เครื่องดื่ม</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="promo" id="promo">
+  <div class="container promo-inner">
+    <div>
+      <div class="eyebrow">DELIVERY PROMOTION</div>
+      <h2>อร่อยถึงบ้าน<br>ไม่ต้องออกไปไหน!</h2>
+      <p>สั่งง่าย ส่งตรงถึงคุณ พร้อมโปรโมชั่นเดลิเวอรี่ตามเงื่อนไขของร้าน</p>
+      <a class="btn gold" href="#contact">สั่งเลย</a>
+    </div>
+    <div class="promo-box">
+      <span>โปรโมชั่นตัวอย่างจากสื่อประชาสัมพันธ์</span>
+      <strong>2 ชิ้น<br>299.-</strong>
+      <p>และมีบริการส่งฟรีในพื้นที่ที่กำหนด</p>
+      <small>*เงื่อนไขเป็นไปตามที่ร้านกำหนด</small>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">GALLERY</div>
+      <h2>ภาพบรรยากาศและเมนู</h2>
+      <p>ภาพประชาสัมพันธ์จากร้าน</p>
+    </div>
+    <div class="gallery-grid">
+      <img src="images/burger-2.jpg" alt="โปรโมชั่นรสชาติไทย">
+      <img src="images/burger-3.jpg" alt="เมนูรสชาติไทย">
+      <img src="images/burger-4.jpg" alt="กิจกรรมและโปรโมชั่น">
+      <img src="images/burger-1.jpg" alt="ภาพร้านและแบรนด์">
+      <img src="images/burger-5.jpg" alt="รวมเบอร์เกอร์รสชาติไทย">
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">ORDER NOW</div>
+      <h2>สั่งความอร่อยได้เลย!</h2>
+      <p>ส่งทั่วกรุงเทพฯ ตามพื้นที่ให้บริการของร้าน</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card"><div class="ico">☎</div><h3>โทรสั่งโดยตรง</h3><p>สอบถามเมนูและพื้นที่จัดส่ง</p><a href="tel:0987654321">098-765-4321</a></div>
+      <div class="contact-card"><div class="ico">●</div><h3>LINE</h3><p>แอดไลน์เพื่อสอบถามและสั่งซื้อ</p><a href="https://line.me/R/ti/p/@roschathai" target="_blank">@roschathai</a></div>
+      <div class="contact-card"><div class="ico">f</div><h3>Facebook</h3><p>ติดตามข่าวสารและโปรโมชั่น</p><a href="https://www.facebook.com/profile.php?id=61590901304791" target="_blank">รสชาติไทย Thai Fusion Burgers</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-brand">รสชาติไทย • THAI FUSION BURGERS</div>
+    <div>© 2026 รสชาติไทย Thai Fusion Burgers • เบอร์เกอร์ฟิวชั่นไทย</div>
+  </div>
+</footer>
+</body>
+</html>
